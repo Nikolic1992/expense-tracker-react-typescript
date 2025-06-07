@@ -11,7 +11,9 @@ interface Props {
 }
 
 function ExpenseList({ expenses, onDelete }: Props) {
-  if (expenses.length === 0) return null;
+  if (expenses.length === 0) {
+    return <h3>You do not have any expense yet.</h3>;
+  }
   return (
     <table className="table table-borders">
       <thead>
