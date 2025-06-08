@@ -1,7 +1,7 @@
 interface Expense {
   id: number;
   description: string;
-  price: number;
+  amount: number;
   category: string;
 }
 
@@ -28,7 +28,7 @@ function ExpenseList({ expenses, onDelete }: Props) {
         {expenses.map((expense) => (
           <tr key={expense.id}>
             <td>{expense.description}</td>
-            <td>${expense.price}</td>
+            <td>${expense.amount}</td>
             <td>{expense.category}</td>
             <td>
               <button
@@ -47,7 +47,7 @@ function ExpenseList({ expenses, onDelete }: Props) {
           <td>
             $
             {expenses
-              .reduce((acc, expense) => expense.price + acc, 0)
+              .reduce((acc, expense) => expense.amount + acc, 0)
               .toFixed(2)}
           </td>
           <td></td>
